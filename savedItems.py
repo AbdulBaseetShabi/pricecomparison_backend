@@ -1,6 +1,20 @@
-#This module will run the 'saved item' portion of PriceAid
-#Daniel Austin, Summer of 2020
+"""
+Module Name:   savedItems.py
+Coded by:      Daniel Austin
+Date coded:    July 27, 2020.
+Date approved: Agust 3, 2020
+Approved by:   Daniel Austin
 
+Desctiption:   This module handles the backend of the 'saved items' portion of PriceAid. 
+               That is, when a user wants to save an item for later, this module is 
+               used to store the information about that item in a database.
+
+Files accesed:
+    priceaid: A relational database
+
+Testing File:  savedItems_tests.docx
+
+"""
 from flask import request, jsonify, Blueprint
 from Connect import Connect
 from Administrator import sendResponse
