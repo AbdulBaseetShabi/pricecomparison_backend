@@ -26,7 +26,14 @@ def history():
         if userID !='null':
             sql = "SELECT * FROM history WHERE userID = %s ORDER BY searchedDate DESC"
             conn.cursor.execute(sql, (userID,))
-            response['history'] = conn.cursor.fetchall()
+            data = conn.cursor.fetchall()
+            response['history'] = []
+            for item in data:
+                response['history'].append({
+                    'itemName' : item[3],
+                    'searchedDate' : item[2],
+                    'itemID' : item[1]
+                })
     except Exception as err:
         request['error'] = err
         error = True
