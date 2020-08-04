@@ -36,9 +36,9 @@ def api_all():
         
         #eBay Code 
         api = Connection(config_file='ebay.yaml') #Connect to the API using authentication file
-        response = api.execute('findItemsAdvanced', {'keywords': 'legos'}) #Retrieve data using eBay developer API
+        res = api.execute('findItemsAdvanced', {'keywords': search}) #Retrieve data using eBay developer API
 
-        items = response.reply.searchResult.item[:10] #Only use the first 10 results
+        items = res.reply.searchResult.item[:10] #Only use the first 10 results
         ebay_products = []
         
         for item in items:
