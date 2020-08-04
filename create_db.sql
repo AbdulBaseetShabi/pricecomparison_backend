@@ -31,7 +31,7 @@ DROP TABLE IF EXISTS `priceaid`.`history`;
 CREATE TABLE IF NOT EXISTS `priceaid`.`history`(
     `userID` INT NOT NULL,
     `itemCode` INT NOT NULL AUTO_INCREMENT,
-    `searchedDate` DATETIME NOT NULL,
+    `searchedDate` NVARCHAR(255) NOT NULL,
     `itemName` NVARCHAR(255) NOT NULL,
     PRIMARY KEY(`itemCode`),
     CONSTRAINT `FK_tbladministrator_tblhistory_userID` FOREIGN KEY (`userID`) REFERENCES `priceaid`.`administrator` (`userID`)
